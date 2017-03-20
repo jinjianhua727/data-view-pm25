@@ -1,0 +1,238 @@
+/* reset css --start */
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+}
+
+:focus {
+	outline: 1;
+}
+
+article,aside,canvas,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section,summary { 
+    display:block;
+}
+
+nav ul,li {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    border:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+mark {
+    background-color:#ff9;
+    color:#000; 
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted #000;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+hr {
+    display:block;
+    height:1px;
+    border:0;   
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+/* reset css --end */
+/* common --start */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-size: 14px;
+    line-height: 1.5;
+    font-family: '微软雅黑';
+    /* background-color: #404a59; */
+}
+
+.common-wrap {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.common-title {
+    font-size: 32px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+/* common --end */
+/* header --start */
+.header{
+    padding: 20px 0;
+}
+.header-city{
+    position: relative;
+}
+.city-list-wrap{
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 50%;
+    height: 260px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    overflow: hidden;
+    display: none;
+}
+.close{
+    position: absolute;
+    top: 10px;
+    right: 18px;
+    width: 24px;
+    height: 24px;
+    line-height: 22px;
+    text-align: center;
+    background-color: #fff;
+    font-size: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.city-list{
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}
+.city-list>li{
+    float: left;
+    margin: 10px;
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
+}
+.city-list>li.active{
+    text-decoration: none;
+    color: #333;
+    cursor: default;
+}
+.default-city{
+    font-size: 24px;
+    font-weight: bold;
+}
+.other-city-title{
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 40px;
+    color: blue;
+    cursor: pointer;
+}
+.other-city-title.active{
+    color: #999;
+}
+
+/* header --end */
+/* weather-today --start */
+
+.weather-today {
+    overflow: hidden;
+}
+
+.weather-today-info {
+    float: left;
+    width: 50%;
+}
+
+.weather-today-info-chart {
+    overflow: hidden;
+}
+
+.today-temperature {
+    font-size: 48px;
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+.today-sun {
+    font-size: 20px;
+    vertical-align: text-bottom;
+}
+
+.weather-today-list {
+    overflow: hidden;
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.weather-today-list li {
+    float: left;
+    width: 50%;
+    font-size: 20px;
+    text-align: left;
+    margin-top: 40px;
+}
+
+.weather-today-item-value {
+    font-size: 32px;
+}
+/* weather-today --end */

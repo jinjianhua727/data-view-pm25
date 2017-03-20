@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>PM25</title>
+</head>
+<body>
+	<div class="header">
+		
+	</div>
+	<div class="weather-today">
+		
+	</div>
+	<div class="weather-24-hours">
+		
+	</div>
+	<div class="weather-week">
+		
+	</div>
+	<div class="pm25-china-map">
+		
+	</div>
+	<div id="a1"></div>
+	<div id="nowTime"></div>
+	<script type="text/javascript" src="http://www.ckplayer.com/ckplayer/6.6/ckplayer.js"></script>
+	<script type="text/javascript">
+	  function loadedHandler(){
+	    if(CKobject.getObjectById('ckplayer_a1').getType()){
+	      CKobject.getObjectById('ckplayer_a1').addListener('time',timeHandler);
+	    }
+	    else{
+	      CKobject.getObjectById('ckplayer_a1').addListener('time','timeHandler');
+	    }
+	  }
+	  function timeHandler(t){
+	    if(t>-1){
+	        CKobject._K_('nowTime').innerHTML='当前播放的时间点是(此值精确到小数点后三位，即毫秒)：'+t;
+	    }
+	  }
+	  var flashvars={
+	    f:'http://v-spider1.f.dajiangtai.com/hadoop/jt-y-Flumeanzhuangbushu-0712-jsakdhd.mp4',
+	    c:0,
+	    p:2,
+	    b:0,
+	    i:'/static/images/letitgo.jpg',
+	    loaded:'loadedHandler',
+	    my_url:encodeURIComponent(window.location.href)
+	  };
+	  var video=['http://v-spider1.f.dajiangtai.com/hadoop/jt-y-Flumeanzhuangbushu-0712-jsakdhd.mp4->video/mp4'];
+	  CKobject.embed('/ckplayer/6.6/ckplayer.swf','a1','ckplayer_a1','100%','100%',false,flashvars,video);
+	</script>
+</body>
+</html>

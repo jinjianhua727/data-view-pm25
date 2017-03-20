@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>PM25</title>
+    <link rel="stylesheet" href="css/pm25.css">
+</head>
+
+<body>
+    <div class="header common-wrap">
+        <div class="header-city">
+            <span class="default-city js-default-city">北京</span><span class="other-city-title js-other-city-title">其他城市</span>
+            <div class="city-list-wrap">
+                <div class="close js-close-city-list">x</div>
+                <ul class="city-list js-city-list">
+                </ul>
+            </div>
+            
+        </div>
+        
+    </div>
+    <div class="weather-today common-wrap">
+        <div class="weather-today-info text-center">
+            <h1 class="common-title text-left">今日天气</h1>
+            <p>
+                <span class="today-temperature js-today-temperature">18℃</span>
+                <span class="today-sun js-today-sun">晴</span>
+            </p>
+            <ul class="weather-today-list">
+                <li>
+                    <p>湿度</p>
+                    <p class="weather-today-item-value js-today-humidity">17%</p>
+                </li>
+                <li>
+                    <p>风力方向</p>
+                    <p class="weather-today-item-value js-today-wind">东南风1级</p>
+                </li>
+                <li>
+                    <p>空气指数</p>
+                    <p class="weather-today-item-value js-today-aqi">19</p>
+                </li>
+                <li>
+                    <p>空气质量</p>
+                    <p class="weather-today-item-value js-today-quality">优</p>
+                </li>
+            </ul>
+        </div>
+        <div class="weather-today-info-chart">
+            <h1 class="common-title text-center">空气污染指数</h1>
+            <div id="city-aqi" style="width: 100%;height: 280px;">
+            </div>
+            <div id="city-aqi-info" style="width: 100%;height: 120px;">
+            </div>
+        </div>
+    </div>
+    <div class="weather-24-hours common-wrap">
+        <h1 class="common-title">24小时天气情况</h1>
+        <div id="weather-24-hours" style="width: 100%;height: 300px;">
+        </div>
+    </div>
+    <div class="weather-week common-wrap">
+        <h1 class="common-title">未来一周天气情况</h1>
+        <div id="weather-week" style="width: 100%;height: 300px;">
+        </div>
+    </div>
+    <div class="pm25-china common-wrap">
+        <h1 class="common-title">全国主要城市空气质量</h1>
+        <div id="pm25-china-map" style="width: 100%;height: 500px;">
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/echarts.min.js"></script>
+    <script src="js/dark.js"></script>
+    <script src="js/china.js"></script>
+    <script src="js/pm25.js"></script>
+    <script>
+        $(function () {
+            pm25.init('北京')
+            $(".js-city-list").on("click",'li',function () {
+                if ($(this).hasClass('active')) {
+                    return false
+                }
+                pm25.changeCityRender($(this).text())
+                $(this).addClass('active')
+                .siblings()
+                .removeClass("active")
+            })
+            $(".js-other-city-title,.js-close-city-list").click(function () {
+                $(".city-list-wrap").toggle()
+            })
+        })
+       
+    </script>
+</body>
+
+</html>
