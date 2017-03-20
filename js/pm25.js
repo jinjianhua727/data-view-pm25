@@ -2,7 +2,7 @@ var pm25 = (function() {
     // 保存数据的变量，重新渲染页面时会用到
     var aqiRanking,weatherDetail,weather24Hours,weatherWeek;
     // 数据存放目录
-    var baseUrl = '../data/';
+    var baseUrl = './data/';
     // 当前城市
     var city = '';
     // jquery变量缓存
